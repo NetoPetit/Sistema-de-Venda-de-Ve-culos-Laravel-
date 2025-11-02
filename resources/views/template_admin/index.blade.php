@@ -63,7 +63,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Paínel
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -71,13 +71,14 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>Ações</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <h6 class="collapse-header">Escolha uma ação:</h6>
+                        <a class="collapse-item" href="{{ route('cadastrarCarro') }}">Cadastrar novo carro</a>
+                        <a class="collapse-item" href="cards.html">Editar informações</a>
+                        <a class="collapse-item" href="cards.html">Excluir carro</a>
                     </div>
                 </div>
             </li>
@@ -225,9 +226,7 @@
                             <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="/admin/img-profile rounded-circle"
-                                    src="/admin/img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Sair</span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

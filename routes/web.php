@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarrosController;
+use App\Http\Controllers\CarroTrabalhoController;
 use App\Http\Controllers\ClientesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -9,7 +10,7 @@ Route::get('/produtos', [ClientesController::class, 'produtos']);
 Route::get('/template_admin', [ClientesController::class, 'templateAdmin']);
 
 
-/*Route::prefix('/carros')->group(function(){
+Route::prefix('/carros')->group(function(){
 
     Route::get('/', [CarrosController::class, 'index'])->name('carros.index');
     Route::get('/cadastrar', [CarrosController::class, 'cadastrarCarro'])->name('carros.cadastrar');
@@ -17,7 +18,7 @@ Route::get('/template_admin', [ClientesController::class, 'templateAdmin']);
     Route::post('/', [CarrosController::class, 'salvarCarro'])->name('carros.novo');
     Route::post('/alterar', [CarrosController::class, 'alterarCarro'])->name('carro.alterar');
     Route::get('/apagar/{id}', [CarrosController::class, 'apagarCarro'])->name('carro.apagar');
-});*/
+});
 
 Route::prefix('/clientes')->group(function(){
 
@@ -38,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/cadastrarCarro', [CarroTrabalhoController::class, 'cadastrarCarro'])->name('cadastrarCarro');
+    Route::post('/cadastrarCarro', [CarroTrabalhoController::class, 'salvarCarro'])->name('salvarCadastroCarro');
 });
 
 require __DIR__.'/auth.php';

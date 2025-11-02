@@ -16,9 +16,19 @@
                 <h1>Entrar</h1>
                 <div>
                     <input type="email" placeholder="Email" id="email" name="email" value="{{ old('email') }}"/>
+
+                    @error('email')
+                        <div class="text-danger mb-1">{{ $message }}</div>
+                    @enderror
+
                 </div>
                 <div>
                     <input type="password" placeholder="Senha" id="password" name="password"/>
+
+                    @error('password')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+
                 </div>
                 <div>
                     <input type="submit" value="Log in" />
