@@ -42,9 +42,6 @@
                     <td>
                         <img src="{{ $linha->img1 }}" alt="imagem carro" width="200px">
                     </td>
-                    <td>
-                        <a href="{{ route('verAnuncio', $linha->id) }}" class="btn btn-info">Visitar anúncio</a>
-                    </td>
 
                 </tr>
             @endforeach

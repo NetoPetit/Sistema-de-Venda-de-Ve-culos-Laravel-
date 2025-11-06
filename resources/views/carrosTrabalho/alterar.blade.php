@@ -7,13 +7,8 @@
     <div class="container">
         <form action="{{ route('editarCarroTrabalho') }}" method="post">
             @csrf
+            <input type="text" name="id" id="id" class="form-control" value="{{ $carro->id }}" hidden>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <span>Id</span>
-                        <input type="text" name="id" id="id" class="form-control" value="{{ $carro->id }}" disabled>
-                    </div>
-                </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <span>Marca</span>
@@ -83,7 +78,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <span>Detalhes</span>
-                        <textarea type="text" rows="3" name="detalhes" id="detalhes" class="form-control" value="{{ $carro->detalhes }}"></textarea>
+                        <textarea type="text" rows="3" name="detalhes" id="detalhes" class="form-control">{{ old('detalhes', $carro->detalhes) }}</textarea>
                         @error('detalhes')
                             <div class="text-danger mb-1">{{ $message }}</div>
                         @enderror

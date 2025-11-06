@@ -54,8 +54,12 @@
                     <td>{{ $linha->detalhes }}</td>
                     <td><img src="{{ $linha->img1 }}" alt="imagem carro" width="200px"></td>
                     <td>
-                        <a href="{{ route('buscarCarroTrabalho', $linha->id) }}" class="btn btn-primary">E</a>
-                        <a href="{{ route('apagarCarroTrabalho', $linha->id) }}" class="btn btn-danger">A</a>
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="{{ route('buscarCarroTrabalho', $linha->id) }}" class="btn btn-primary">E</a>
+                                <a href="{{ route('apagarCarroTrabalho', $linha->id) }}" class="btn btn-danger">A</a>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             @endforeach

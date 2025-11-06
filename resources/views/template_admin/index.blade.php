@@ -66,6 +66,8 @@
                 Paínel
             </div>
 
+            @auth
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -82,6 +84,8 @@
                     </div>
                 </div>
             </li>
+
+            @endauth
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
@@ -128,6 +132,7 @@
             </li>
 
             <!-- Nav Item - Charts -->
+            {{--
             @auth
                 <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}">
@@ -135,6 +140,7 @@
                     <span>Cadastrar novo Admin</span></a>
             </li>
             @endauth
+            --}}
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">

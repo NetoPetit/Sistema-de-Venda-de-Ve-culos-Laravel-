@@ -10,7 +10,7 @@ Route::get('/produtos', [ClientesController::class, 'produtos']);
 Route::get('/template_admin', [ClientesController::class, 'templateAdmin']);
 
 
-Route::prefix('/carros')->group(function(){
+Route::prefix('carros')->group(function(){
 
     Route::get('/', [CarrosController::class, 'index'])->name('carros.index');
     Route::get('/cadastrar', [CarrosController::class, 'cadastrarCarro'])->name('carros.cadastrar');
@@ -20,7 +20,7 @@ Route::prefix('/carros')->group(function(){
     Route::get('/apagar/{id}', [CarrosController::class, 'apagarCarro'])->name('carro.apagar');
 });
 
-Route::prefix('/clientes')->group(function(){
+Route::prefix('clientes')->group(function(){
 
     Route::get('/', [ClientesController::class, 'index']);
     Route::get('/clientes_cadastro', [ClientesController::class, 'clientesCadastro'])->name('cliente');
@@ -31,9 +31,8 @@ Route::prefix('/clientes')->group(function(){
     Route::get('/excluir/{id}', [ClientesController::class, 'excluirCliente'])->name('cliente.excluir');
 });
 
-Route::get('/', function() {
-        return view('carrosTrabalho.index');
-    })->name('index');
+Route::get('/', [CarroTrabalhoController::class, 'index'])->name('index');
+Route::get('/verAnuncio/{id}', [CarroTrabalhoController::class, 'verAnuncio'])->name('verAnuncio');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,7 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/cadastrarCarro', [CarroTrabalhoController::class, 'cadastrarCarro'])->name('cadastrarCarro');
     Route::post('/cadastrarCarro', [CarroTrabalhoController::class, 'salvarCarro'])->name('salvarCadastroCarro');
-    Route::get('/{id}', [CarroTrabalhoController::class, 'buscarCarro'])->name('buscarCarroTrabalho');
+    Route::get('/buscar/{id}', [CarroTrabalhoController::class, 'buscarCarro'])->name('buscarCarroTrabalho');
     Route::post('/editar', [CarroTrabalhoController::class, 'editarCarro'])->name('editarCarroTrabalho');
     Route::get('/apagar/{id}', [CarroTrabalhoController::class, 'apagarCarro'])->name('apagarCarroTrabalho');
     Route::get('/dashboard', [CarroTrabalhoController::class, 'dashboard'])->name('dashboard');
