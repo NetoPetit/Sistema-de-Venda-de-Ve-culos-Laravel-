@@ -1,56 +1,73 @@
 @extends('template_admin.index')
 
 @section('conteudo')
+<div id="main-wrapper">
+    <div class="container">
+        <div class="row aln-top">
 
-    @guest
+            <div class="col-7 col-12-medium">
+                <section class="box">
+                    <div class="image featured">
+                        <img id="mainImage" src="{{ $carro->img1 }}" alt="Imagem principal do carro">
+                    </div>
 
-    <h2>Seja bem vindo Visitante!!!</h2>
+                    <div class="row gtr-25">
+                        <div class="col-4">
+                            <img src="{{ $carro->img1 }}" class="thumb" alt="thumb 1">
+                        </div>
+                        <div class="col-4">
+                            <img src="{{ $carro->img2 }}" class="thumb" alt="thumb 2">
+                        </div>
+                        <div class="col-4">
+                            <img src="{{ $carro->img3 }}" class="thumb" alt="thumb 3">
+                        </div>
+                    </div>
+                </section>
+            </div>
 
-    @endguest
+            <div class="col-5 col-12-medium">
+                <section class="box">
+                    <header>
+                        <h2>{{ $carro->marca }} {{ $carro->modelo }}</h2>
+                        <p><strong>Ano:</strong> {{ $carro->ano_fabricacao }}</p>
+                        <p><strong>Km:</strong> {{ $carro->quilometragem }}</p>
+                        <p><strong>Preço:</strong> R$ {{ $carro->valor }}</p>
+                    </header>
 
-    @auth
+                    <p><strong>Detalhes:</strong></p>
+                    <p>{{ $carro->detalhes }}</p>
 
-    <h2>Seja bem vindo Admin!!!</h2>
+                    <ul class="actions">
+                        <li><a href="{{ route('index') }}" class="button alt">Voltar</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
 
-    @endauth
+<script>
+    document.querySelectorAll('.thumb').forEach(img => {
+        img.addEventListener('click', e => {
+            document.getElementById('mainImage').src = e.target.src;
+        });
+    });
+</script>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Cor</th>
-                <th>Ano</th>
-                <th>Quilometragem</th>
-                <th>Valor</th>
-                <th>Detalhes</th>
-                <th>Foto 1</th>
-                <th>Foto 2</th>
-                <th>Foto 3</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ $carro->marca }}</td>
-                <td>{{ $carro->modelo }}</td>
-                <td>{{ $carro->cor }}</td>
-                <td>{{ $carro->ano_fabricacao }}</td>
-                <td>{{ $carro->quilometragem }} Km</td>
-                <td>R$ {{ $carro->valor }}</td>
-                <td>{{ $carro->detalhes }}</td>
-                <td>
-                    <img src="{{ $carro->img1 }}" alt="imagem carro" width="200px">
-                </td>
-                <td>
-                    <img src="{{ $carro->img2 }}" alt="imagem carro" width="200px">
-                </td>
-                <td>
-                    <img src="{{ $carro->img3 }}" alt="imagem carro" width="200px">
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ route('index') }}" class="btn btn-info">Pagina inicial</a>
+<style>
+.thumb {
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.thumb:hover {
+    transform: scale(1.05);
+}
+#mainImage {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+</style>
 @endsection
-

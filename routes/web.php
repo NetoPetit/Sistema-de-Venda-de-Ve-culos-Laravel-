@@ -5,6 +5,7 @@ use App\Http\Controllers\CarroTrabalhoController;
 use App\Http\Controllers\ClientesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\AdminMiddleware;
 
 Route::get('/produtos', [ClientesController::class, 'produtos']);
 Route::get('/template_admin', [ClientesController::class, 'templateAdmin']);
@@ -38,12 +39,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/cadastrarCarro', [CarroTrabalhoController::class, 'cadastrarCarro'])->name('cadastrarCarro');
-    Route::post('/cadastrarCarro', [CarroTrabalhoController::class, 'salvarCarro'])->name('salvarCadastroCarro');
-    Route::get('/buscar/{id}', [CarroTrabalhoController::class, 'buscarCarro'])->name('buscarCarroTrabalho');
-    Route::post('/editar', [CarroTrabalhoController::class, 'editarCarro'])->name('editarCarroTrabalho');
-    Route::get('/apagar/{id}', [CarroTrabalhoController::class, 'apagarCarro'])->name('apagarCarroTrabalho');
-    Route::get('/dashboard', [CarroTrabalhoController::class, 'dashboard'])->name('dashboard');
+
+    Route::middleware([AdminMiddleware::class])->group(function(){
+        Route::get('/cadastrarCarro', [CarroTrabalhoController::class, 'cadastrarCarro'])->name('cadastrarCarro');
+        Route::post('/cadastrarCarro', [CarroTrabalhoController::class, 'salvarCarro'])->name('salvarCadastroCarro');
+        Route::get('/buscar/{id}', [CarroTrabalhoController::class, 'buscarCarro'])->name('buscarCarroTrabalho');
+        Route::post('/editar', [CarroTrabalhoController::class, 'editarCarro'])->name('editarCarroTrabalho');
+        Route::get('/apagar/{id}', [CarroTrabalhoController::class, 'apagarCarro'])->name('apagarCarroTrabalho');
+        Route::get('/dashboard', [CarroTrabalhoController::class, 'dashboard'])->name('dashboard');
+    });
+
 });
 
 require __DIR__.'/auth.php';

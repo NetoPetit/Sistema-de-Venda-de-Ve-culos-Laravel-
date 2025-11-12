@@ -1,56 +1,85 @@
 @extends('template_admin.index')
 
-@section('conteudo')
 
-    @guest
+@section('banner')
+  <!-- Banner -->
+	<div id="banner-wrapper">
+		<div id="banner" class="box container">
+			<div class="row">
+				<div class="col-7 col-12-medium">
 
-    <h2>Seja bem vindo Visitante!!!</h2>
+                    @guest
 
-    @endguest
+                        <h2>Seja bem vindo Visitante!!!</h2>
+                        <p>realize seu sonho sobre quatro rodas com quem entende do assunto.</p>
 
-    @auth
+                    @endguest
 
-    <h2>Seja bem vindo Admin!!!</h2>
+					@auth
 
-    @endauth
+                        <p>Usuário autenticado: {{ Auth::user()->name }}</p>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Cor</th>
-                <th>Ano</th>
-                <th>Quilometragem</th>
-                <th>Valor</th>
-                <th>Detalhes</th>
-                <th>Foto</th>
-                <th>Opções</th>
-            </tr>
-        </thead>
-        <tbody>
+                        @if(Auth::user()->is_admin)
+                            <h2>Seja bem vindo Admin!!!</h2>
+                            <p>acesse o paínel para fazer o controle dos carros.</p>
+                        @endif
 
-            @foreach ($carros as $linha)
-                <tr>
-                    <td>{{ $linha->marca }}</td>
-                    <td>{{ $linha->modelo }}</td>
-                    <td>{{ $linha->cor }}</td>
-                    <td>{{ $linha->ano_fabricacao }}</td>
-                    <td>{{ $linha->quilometragem }} Km</td>
-                    <td>R$ {{ $linha->valor }}</td>
-                    <td>{{ $linha->detalhes }}</td>
-                    <td>
-                        <img src="{{ $linha->img1 }}" alt="imagem carro" width="200px">
-                    </td>
-                    <td>
-                        <a href="{{ route('verAnuncio', $linha->id) }}" class="btn btn-info">Visitar anúncio</a>
-                    </td>
+                     @endauth
+				</div>
+				<div class="col-5 col-12-medium">
+					<ul>
+                        @guest
 
-                </tr>
-            @endforeach
+                            <li><a href="{{ route('login') }}" class="button large icon solid fa-arrow-circle-right">Login</a></li>
+						    <li><a href="{{ route('register') }}" class="button alt large icon solid fa-question-circle">Primeiro acesso</a></li>
 
-        </tbody>
-    </table>
+                        @endguest
 
+                        @auth
+
+                            @if(Auth::user()->is_admin)
+                                <li><a href="{{ route('dashboard') }}" class="button large icon solid fa-arrow-circle-right">Paínel</a></li>
+                            @endif
+
+                        @endauth
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 @endsection
 
+@section('conteudo')
+    <!-- Features -->
+				<div id="features-wrapper">
+					<div class="container">
+						<div class="row">
+
+                            @foreach ($carros as $linha)
+
+                                <!-- Box -->
+                                <div class="col-4 col-12-medium">
+
+								    <section class="box feature">
+										<a href="{{ route('verAnuncio', $linha->id) }}" class="image featured"><img src="{{ $linha->img1 }}" alt="" /></a>
+										<div class="inner">
+											<header>
+												<h2>{{ $linha->marca }} {{ $linha->modelo }}</h2>
+											</header>
+											<p><strong>Ano: </strong>{{ $linha->ano_fabricacao }}</p>
+											<p><strong>Km: </strong>{{ $linha->quilometragem }}</p>
+                                            <p></p>
+											<p><strong>R$ </strong>{{ $linha->valor }}</p>
+
+										</div>
+									</section>
+
+							    </div>
+
+                            @endforeach
+
+						</div>
+					</div>
+				</div>
+@endsection
