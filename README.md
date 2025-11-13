@@ -1,75 +1,77 @@
-🚗 Sistema de Venda de Veículos – Laravel
+# 🚗 Sistema de Venda de Veículos – Laravel    
 
-🧩 Descrição Geral
+---
 
-Este projeto consiste em um Sistema de Venda de Veículos desenvolvido em Laravel, com autenticação de usuários e divisão entre área pública e área administrativa.
+## 🧩 Descrição Geral  
 
-O sistema simula um site de classificados automotivos, inspirado em portais como Carros.com.br, iCarros e Webmotors.
+Este projeto consiste em um **Sistema de Venda de Veículos** desenvolvido em **Laravel**, com autenticação de usuários e divisão entre **área pública** e **área administrativa**.  
 
-🌐 Áreas do Sistema
-🏠 Área Pública
+O sistema simula um site de classificados automotivos, inspirado em portais como **Carros.com.br**, **iCarros** e **Webmotors**.  
 
-Visão aberta para todos os visitantes, onde é possível:
+---
 
-Visualizar todos os veículos cadastrados.
+## 🌐 Áreas do Sistema  
 
-Acessar a página de detalhes de cada veículo.
+### 🏠 Área Pública  
+Visão aberta para todos os visitantes, onde é possível:  
+- Visualizar todos os veículos cadastrados.  
+- Acessar a página de **detalhes** de cada veículo.  
 
-Cada veículo deve exibir:
+Cada veículo exibe:  
+- 🖼️ **Foto principal** (imagem via link);  
+- 🚘 **Marca, modelo e cor**;  
+- 📅 **Ano de fabricação**;  
+- 📏 **Quilometragem atual**;  
+- 💵 **Valor total**;  
+- 📝 **Descrição detalhada**.  
 
-🖼️ Foto principal (imagem via link);
+Ao clicar em um veículo, o visitante acessa a página com **todas as informações** e **demais fotos**.  
 
-🚘 Marca, modelo e cor;
+---
 
-📅 Ano de fabricação;
+### 🔐 Área Administrativa  
+Acesso restrito a **usuários autenticados (admin)**.  
 
-📏 Quilometragem atual;
+Funcionalidades:  
+- 📁 **Gerenciamento de cadastros:**  
+  - Marcas  
+  - Modelos  
+  - Cores  
+  - Veículos  
 
-💵 Valor total;
+Cada veículo deve conter:  
+- Mínimo de **3 fotos** (armazenadas como **links**, não upload real);  
+- Campos obrigatórios: **ano**, **quilometragem** e **valor**.  
 
-📝 Descrição detalhada.
+O administrador pode:  
+- ➕ **Adicionar** novos veículos;  
+- ✏️ **Editar** veículos existentes;  
+- ❌ **Excluir** registros.  
 
-Ao clicar em um veículo, será aberta uma página com todas as informações e demais fotos.
+---
 
-🔐 Área Administrativa
+## 🎨 Template e Layout  
 
-Acesso restrito a usuários autenticados (admin).
+O site utiliza um **template visual base** com o uso correto de **@section** e **@yield** no Laravel.  
 
-Funcionalidades:
+> ⚠️ Trabalhos sem template **não serão corrigidos**.  
 
-📁 Gerenciamento de cadastros:
+Critérios de avaliação visual:  
+- Estética agradável e organizada;  
+- Identidade visual coerente;  
+- Uso de **frameworks CSS** (ex: Bootstrap, Tailwind, etc.) é permitido.  
 
-Marca
+---
 
-Modelo
+## ⚙️ Tecnologias e Requisitos  
 
-Core
+- **Framework:** Laravel  
+- **Banco de Dados:** MySQL  
+- **Autenticação:** Login e senha (padrão Laravel)  
+- **Estilização:** Bootstrap ou outro framework CSS  
+- **Imagens:** Somente via **links (URLs)** válidos, sem upload real  
 
-Veículo
-
-O administrador pode:
-
-➕ Adicionar novos veículos;
-
-✏️ Editar veículos existentes;
-
-❌ Excluir registros.
-
-🎨 Template e Layout
-
-O site utiliza um template visual base com o uso de @section e @yield no Laravel.
-
-⚙️ Tecnologias
-
-Framework: Laravel
-
-Banco de Dados: MySQL
-
-Autenticação: Login e senha (padrão Laravel)
-
-Estilização: Bootstrap ou outro framework CSS
-
-Imagens: Somente via links (URLs) válidos, sem upload real
+---
 
 🚀 Como Rodar o Projeto
 
