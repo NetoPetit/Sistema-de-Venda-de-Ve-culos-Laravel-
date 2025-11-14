@@ -33,11 +33,14 @@ Ao clicar em um veículo, o visitante acessa a página com **todas as informaç�
 Acesso restrito a **usuários autenticados (admin)**.  
 
 Funcionalidades:  
-- 📁 **Gerenciamento de cadastros:**  
+- 📁 **Gerenciamento de cadastro:**  
   - Marca  
   - Modelo  
-  - Cor  
-  - Veículo   
+  - Cor
+  - Ano
+  - Km  
+  - Preço
+  - Descrição   
 
 O administrador pode:  
 - ➕ **Adicionar** novos veículos;  
