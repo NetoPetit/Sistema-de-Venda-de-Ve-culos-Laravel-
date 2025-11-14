@@ -34,14 +34,10 @@ Acesso restrito a **usuários autenticados (admin)**.
 
 Funcionalidades:  
 - 📁 **Gerenciamento de cadastros:**  
-  - Marcas  
-  - Modelos  
-  - Cores  
-  - Veículos  
-
-Cada veículo deve conter:  
-- Mínimo de **3 fotos** (armazenadas como **links**, não upload real);  
-- Campos obrigatórios: **ano**, **quilometragem** e **valor**.  
+  - Marca  
+  - Modelo  
+  - Cor  
+  - Veículo   
 
 O administrador pode:  
 - ➕ **Adicionar** novos veículos;  
@@ -52,18 +48,11 @@ O administrador pode:
 
 ## 🎨 Template e Layout  
 
-O site utiliza um **template visual base** com o uso correto de **@section** e **@yield** no Laravel.  
-
-> ⚠️ Trabalhos sem template **não serão corrigidos**.  
-
-Critérios de avaliação visual:  
-- Estética agradável e organizada;  
-- Identidade visual coerente;  
-- Uso de **frameworks CSS** (ex: Bootstrap, Tailwind, etc.) é permitido.  
-
+O site utiliza um **template visual base** com o uso de **@section** e **@yield** no Laravel.  
+ 
 ---
 
-## ⚙️ Tecnologias e Requisitos  
+## ⚙️ Tecnologias  
 
 - **Framework:** Laravel  
 - **Banco de Dados:** MySQL  
@@ -73,62 +62,70 @@ Critérios de avaliação visual:
 
 ---
 
-🚀 Como Rodar o Projeto
+## 🚀 Como Rodar o Projeto
 
-Clone este repositório:
+### 🔹 1. Clone este repositório
 
+```bash
 git clone https://github.com/seu-usuario/sistema-venda-veiculos.git
+```
 
-
-Acesse a pasta do projeto:
-
+### 🔹 2. Acesse a pasta do projeto
+```bash
 cd sistema-venda-veiculos
-
-
-Instale as dependências:
-
+```
+### 🔹 3. Instale as dependências do PHP e JavaScript
+```bash
 composer install
 npm install && npm run dev
-
-
-Configure o arquivo .env:
-
+```
+### 🔹 4. Configure o arquivo .env
+```bash
 cp .env.example .env
 php artisan key:generate
-
-
-Configure o banco de dados no .env e rode as migrações:
-
+```
+### 🔹 5. Configure o banco de dados no .env e rode as migrações + seeders
+```bash
 php artisan migrate --seed
-
-
-Inicie o servidor local:
-
+```
+### 🔹 6. Inicie o servidor local
+```bash
 php artisan serve
+```
 
-🔑 Acesso ao Sistema
+## 🔑 Acesso ao Sistema
 
-Usuário Administrador:
+### 👤 Usuário Administrador (via Seeder)
 
-E-mail: admin@admin.com
-Senha: admin123
 
-🖼️ Prints do Sistema
+E-mail: admin@carrosonline.com
 
-Páginas:
 
-Página Inicial	
+Senha: 12345678
 
-Detalhes do Veículo	
 
-Login	
 
-Área Admin	
+O projeto já vem com dados prontos para teste:
+### ✔️ Usuário Admin
+### ✔️ Carros pré-cadastrados
+### ✔️ Dashboard funcional
 
-Cadastro de Veículo	
 
-👨‍💻 Autor(es)
+## 🖼️ Prints do Sistema
 
-Nome do Aluno: [Seu Nome Aqui]
-Curso: Desenvolvimento Web / Programação para Internet
-Instituição: [Nome da Instituição]
+###📌 Páginas Incluídas
+
+
+Página Inicial
+
+
+Detalhes do Veículo
+
+
+Login
+
+
+Área Admin
+
+
+Cadastro de Veículo
