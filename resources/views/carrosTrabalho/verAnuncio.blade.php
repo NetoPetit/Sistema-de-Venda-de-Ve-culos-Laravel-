@@ -29,6 +29,7 @@
                 <section class="box">
                     <header>
                         <h2>{{ $carro->marca }} {{ $carro->modelo }}</h2>
+                        <p><strong>Cor: </strong>{{ $carro->cor }}</p>
                         <p><strong>Ano:</strong> {{ $carro->ano_fabricacao }}</p>
                         <p><strong>Km:</strong> {{ $carro->quilometragem }}</p>
                         <p><strong>Preço:</strong> R$ {{ $carro->valor }}</p>

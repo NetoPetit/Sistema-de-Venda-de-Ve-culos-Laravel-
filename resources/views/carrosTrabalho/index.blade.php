@@ -69,6 +69,7 @@
 											<header>
 												<h2>{{ $linha->marca }} {{ $linha->modelo }}</h2>
 											</header>
+                                            <p><strong>Cor: </strong>{{ $linha->cor }}</p>
 											<p><strong>Ano: </strong>{{ $linha->ano_fabricacao }}</p>
 											<p><strong>Km: </strong>{{ $linha->quilometragem }}</p>
                                             <p></p>
