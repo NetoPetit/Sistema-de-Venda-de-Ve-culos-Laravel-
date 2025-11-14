@@ -113,19 +113,36 @@ O projeto já vem com dados prontos para teste:
 
 ## 🖼️ Prints do Sistema
 
-###📌 Páginas Incluídas
+### 📌 Páginas Incluídas
 
 
-Página Inicial
+### Página Inicial
 
+![Página Inicial](public/img/paginicial1.png)
+![Página Inicial](public/img/paginicial2.png)
 
-Detalhes do Veículo
+### Detalhes do Veículo
 
+![Detalhes do Veículo](public/img/detalhes.png)
 
-Login
+### Cadastro de Usuário
 
+![Cadastro de Usuário](public/img/cadastrousuario.png)
 
-Área Admin
+### Login
 
+![Login](public/img/login.png)
 
-Cadastro de Veículo
+### Recuperar Senha
+
+![Recuperar Senha](public/img/esqueceusenha.png)
+
+### Área Admin
+
+![Área Admin](public/img/paineladm.png)
+![Área Admin](public/img/paineladm2.png)
+
+### Cadastro de Veículo
+
+![Cadastro de Veículo](public/img/cadastrocarro1.png)
+![Cadastro de Veículo](public/img/cadastrocarro2.png)
